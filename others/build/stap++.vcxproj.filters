@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Bar.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Clock.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Domain.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\ElementGroup.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\H8.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\LoadCaseData.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Material.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Node.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Outputter.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\Solver.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\cpp\main.cpp">
+      <Filter>SOURCE FILES</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Bar.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Clock.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Domain.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Element.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\ElementGroup.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\H8.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\LoadCaseData.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Material.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Node.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Outputter.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\SkylineMatrix.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\h\Solver.h">
+      <Filter>HEADER FILES</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\60231\Desktop\STAPpp-master\STAPpp-master\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="HEADER FILES">
+      <UniqueIdentifier>{E2CFEEFE-116A-3139-BFE9-5267CE472D81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SOURCE FILES">
+      <UniqueIdentifier>{81BA0313-2665-3C3B-B571-006EC9547CD9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

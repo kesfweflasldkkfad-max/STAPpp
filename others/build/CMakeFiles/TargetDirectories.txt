@@ -1,0 +1,3 @@
+C:/Users/60231/Desktop/STAPpp-master/STAPpp-master/src/build/CMakeFiles/stap++.dir
+C:/Users/60231/Desktop/STAPpp-master/STAPpp-master/src/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/60231/Desktop/STAPpp-master/STAPpp-master/src/build/CMakeFiles/ZERO_CHECK.dir

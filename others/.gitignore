@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+h8_report.aux
+h8_report.log
+h8_report.out
+
+src/build/

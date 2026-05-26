@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{geometry}
+\usepackage{booktabs}
+\geometry{margin=2.5cm}
+
+\title{四节点四边形等参单元分片试验}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{题目}
+
+利用 STAPpy/elasticity2d-python/ABAQUS 对四节点四边形等参单元进行分片试验。考虑平面应力问题，取
+\begin{equation}
+E = 1000, \qquad \nu = 0.3.
+\end{equation}
+
+给定位移场为
+\begin{equation}
+u(x,y) = 0.01x, \qquad v(x,y) = -0.003y.
+\end{equation}
+
+验证该位移场所对应的应力状态，并说明四节点四边形等参单元是否通过分片试验。
+
+\section{理论分析}
+
+在线弹性小变形条件下，平面应力问题的应变分量为
+\begin{equation}
+\varepsilon_x = \frac{\partial u}{\partial x},
+\qquad
+\varepsilon_y = \frac{\partial v}{\partial y},
+\qquad
+\gamma_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}.
+\end{equation}
+
+代入题设位移场可得
+\begin{equation}
+\varepsilon_x = 0.01,
+\qquad
+\varepsilon_y = -0.003,
+\qquad
+\gamma_{xy} = 0.
+\end{equation}
+
+故应变向量为
+\begin{equation}
+\bm{\varepsilon}=
+\begin{bmatrix}
+0.01 \\
+-0.003 \\
+0
+\end{bmatrix}.
+\end{equation}
+
+平面应力本构矩阵为
+\begin{equation}
+\bm{D} = \frac{E}{1-\nu^2}
+\begin{bmatrix}
+1 & \nu & 0 \\
+\nu & 1 & 0 \\
+0 & 0 & \dfrac{1-\nu}{2}
+\end{bmatrix}.
+\end{equation}
+
+将 $E=1000$、$\nu=0.3$ 代入，有
+\begin{equation}
+\bm{\sigma} = \bm{D}\bm{\varepsilon}.
+\end{equation}
+
+逐项计算得
+\begin{align}
+\sigma_x &= \frac{1000}{1-0.3^2}(0.01+0.3\times(-0.003)) = 10, \\
+\sigma_y &= \frac{1000}{1-0.3^2}(0.3\times0.01-0.003) = 0, \\
+\tau_{xy} &= \frac{1000}{2(1+0.3)}\times 0 = 0.
+\end{align}
+
+因此该位移场对应的精确应力解为
+\begin{equation}
+\sigma_x = 10,
+\qquad
+\sigma_y = 0,
+\qquad
+\tau_{xy} = 0.
+\end{equation}
+
+同时，体力项为
+\begin{equation}
+\bm{b} = \bm{0}.
+\end{equation}
+
+这说明该问题对应一个常应变、常应力的单向拉伸状态，是分片试验的标准检验情形。
+
+\section{数值验证方法}
+
+由于当前 STAP++ 仓库仅实现了杆单元，并未实现 Q4 单元，因此单独编写了 Python 脚本 STAPpy test.py，对四节点四边形双线性等参单元进行验证。数值模型采用畸变的 $2\times2$ 网格，共 4 个 Q4 单元、9 个节点，在边界节点施加精确位移，只保留中心节点为自由节点，采用 $2\times2$ Gauss 积分计算单元刚度矩阵与高斯点应力。
+
+若单元通过分片试验，则应满足以下两点：
+\begin{enumerate}
+  \item 自由节点的数值位移与精确位移一致；
+  \item 各高斯积分点的应力与理论常应力解一致。
+\end{enumerate}
+
+\section{数值结果}
+
+Python 脚本输出结果为
+\begin{verbatim}
+Q4 patch test on a distorted 2x2 mesh
+E = 1000.0, nu = 0.3
+Exact strain = [ 0.01  -0.003  0.   ]
+Expected stress = [1.0000000e+01 1.5335718e-17 0.0000000e+00]
+Solved center displacement = [ 0.01  -0.003]
+Exact center displacement = [ 0.01  -0.003]
+Max center displacement error = 1.734723e-18
+Max Gauss-point stress error = 5.329071e-15
+Max free-DOF residual = 8.881784e-16
+Patch test passed.
+\end{verbatim}
+
+由结果可见：
+\begin{equation}
+\max |\Delta \bm{u}| \approx 1.73\times 10^{-18},
+\qquad
+\max |\Delta \bm{\sigma}| \approx 5.33\times 10^{-15}.
+\end{equation}
+
+误差仅为机器舍入误差量级，可认为数值解与理论解完全一致。
+
+\section{结论}
+
+对于题设位移场
+\begin{equation}
+u(x,y) = 0.01x, \qquad v(x,y) = -0.003y,
+\end{equation}
+四节点四边形双线性等参单元能够精确再现线性位移场，并得到常应力解
+\begin{equation}
+\sigma_x = 10,
+\qquad
+\sigma_y = 0,
+\qquad
+\tau_{xy} = 0.
+\end{equation}
+
+因此，四节点四边形等参单元在该平面应力问题下通过了分片试验。
+
+\end{document}

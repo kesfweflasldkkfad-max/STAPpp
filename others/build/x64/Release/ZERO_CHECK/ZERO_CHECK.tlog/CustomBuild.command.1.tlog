@@ -1,0 +1,10 @@
+^C:\USERS\60231\DESKTOP\STAPPP-MASTER\STAPPP-MASTER\SRC\BUILD\CMAKEFILES\9659242D4D16DA0DE3D798FD255B08A4\GENERATE.STAMP.RULE
+setlocal
+D:\CMake\bin\cmake.exe -SC:/Users/60231/Desktop/STAPpp-master/STAPpp-master/src -BC:/Users/60231/Desktop/STAPpp-master/STAPpp-master/src/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/60231/Desktop/STAPpp-master/STAPpp-master/src/build/stap++.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
